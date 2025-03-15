@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div classname="login-container">
+      <h2 classname="form-title"></h2>
+        <div className="social-login">
+          <button className="social-button">
+            google SSO
+          </button>
+        </div>
+
+        <p class="separator"><span>or</span></p>
+
+        <form action="#" className="login-form">
+          <div className="input-wrapper">
+            <input type="email" className="input-field" placeholder="email" required />
+            <i className="material-symbols-rounded">mail</i>
+          </div>
+
+          <div className="input-wrapper">
+          <input type="password" className="password-field" required />
+            <i className="material-symbols-rounded">lock</i>
+          </div>
+
+          <button classnmae="login-button">Log In</button>
+        </form>
+
+        <p className="signup-text">Don't have an account? <a href="#">Sign-up now</a></p>
+    </div>
   )
 }
 
