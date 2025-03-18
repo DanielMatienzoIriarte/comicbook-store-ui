@@ -20,7 +20,7 @@ body {
   padding: 0.6rem;
 }
 
-.login-container {
+.login-container, .signup-container {
   margin: 0 auto;
   max-width: 410px;
   padding: 2rem 1.5rem;
@@ -29,7 +29,7 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.login-container .form-title {
+.login-container .form-title, .signup-container .form-title {
   text-align: center;
   font-size: 1.37rem;
   font-weight: 600;
@@ -94,14 +94,14 @@ body {
   width: 23px;
 }
 
-.login-form .input-wrapper {
+.login-form .input-wrapper, .signup-form .input-wrapper {
   height: 54px;
   width: 100%;
   position: relative;
   margin-bottom: 1.5rem;
 }
 
-.login-form .input-field {
+.login-form .input-field, .signup-form .input-field {
   width: 100%;
   height: 100%;
   outline: none;
@@ -112,15 +112,15 @@ body {
   transition: 0.2s ease;
 }
 
-.login-form .input-field:focus {
+.login-form .input-field:focus, .signup-form .input-field:focus {
   border-color: #5f41e4;
 }
 
-.login-form .input-field::placeholder {
+.login-form .input-field::placeholder, .signup-form .input-field::placeholder {
   color: #a395e0;
 }
 
-.login-form .input-wrapper i {
+.login-form .input-wrapper i, .signup-form .input-wrapper i {
   color: #a395e0;
   position: absolute;
   top: 50%;
@@ -131,16 +131,16 @@ body {
   transition: 0.2s ease;
 }
 
-.login-form .input-wrapper i:not(.eye-icon) {
+.login-form .input-wrapper i:not(.eye-icon), .signup-form .input-wrapper i:not(.eye-icon) {
   pointer-events: none ;
   left: 0.93rem;
 }
 
-.login-form .input-field:focus ~ i:not(.eye-icon) {
+.login-form .input-field:focus ~ i:not(.eye-icon), .signup-form .input-wrapper ~ i:not(.eye-icon) {
   color: #5f41e4;
 }
 
-.login-form .input-wrapper i.eye-icon {
+.login-form .input-wrapper i.eye-icon, .signup-form .input-wrapper i.eye-icon {
   color: #917de8;
   display: none;
   right: 0.93rem;
@@ -148,7 +148,7 @@ body {
   font-size: 1.25rem;
 }
 
-.login-form .input-wrapper .input-field:valid ~ .eye-icon {
+.login-form .input-wrapper .input-field:valid ~ .eye-icon, .signup-form .input-wrapper .input-field:valid ~ .eye-icon {
   display: flex;
 }
 
@@ -158,7 +158,7 @@ body {
   margin-top: -0.44rem;
 }
 
-.login-form .login-button {
+.login-form .login-button, .signup-form .signup-button {
   border: none;
   outline: none;
   width: 100%;
@@ -173,23 +173,23 @@ body {
   transition: 0.3s ease;
 }
 
-.login-form .login-button:hover {
+.login-form .login-button:hover, .signup-form .signup-button:hover {
   background: #4320df;
 }
 
-.login-container .signup-prompt {
+.login-container .signup-prompt, .signup-container .signup-prompt {
   text-align: center;
   font-size: 1.06rem;
   font-weight: 500;
   margin: 1.75rem 0 0.31rem;
 }
 
-.login-container a {
+.login-container a, .signup-container a {
   color: #5f41e4;
   font-weight: 500;
   text-decoration: none;
 }
 
-.login-container a:hover {
+.login-container a:hover, .signup-container a:hover {
   text-decoration: underline;
 }

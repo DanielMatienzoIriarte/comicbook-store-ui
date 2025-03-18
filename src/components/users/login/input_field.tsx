@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { preview } from 'vite';
 
 const InputField = ({ type, placeholder, icon }) => {
   const [isPasswordDisplayed, setIsPasswordDisplayed] = useState(false);
@@ -16,7 +15,7 @@ const InputField = ({ type, placeholder, icon }) => {
       {
         type === 'password' && (
           <i 
-            onClick={ () => setIsPasswordDisplayed(!isPasswordDisplayed) }
+            onClick={ () => setIsPasswordDisplayed(prevState => !prevState) }
             className="material-symbols-rounded eye-icon"
           >
             { isPasswordDisplayed ? 'visibility' : 'visibility_off' }
@@ -25,6 +24,6 @@ const InputField = ({ type, placeholder, icon }) => {
       }
     </div>
   );
-}
+};
 
 export default InputField;

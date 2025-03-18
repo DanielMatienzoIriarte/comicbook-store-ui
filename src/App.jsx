@@ -1,27 +1,10 @@
-import InputField from "./books/components/input_field"
-import SocialLogin from "./books/components/social_login"
+import LoginForm from "./components/users/login/login_form";
+import SignupForm from "./components/users/signup/signup_form";
 
 const App = () => {
   return (
-    <div className="login-container">
-      <h2 className="form-title"></h2>
-        <SocialLogin />
-
-        <p className ="separator"><span>or</span></p>
-
-        <form action="#" className="login-form">
-          <InputField type="email" placeholder="Email address" icon="mail" />
-
-          <InputField type="password" placeholder="Password" icon="lock" />
-
-          <a href="#" className="forgot-password-link">Forgot Password?</a>
-
-          <button className="login-button">Log In</button>
-        </form>
-
-        <p className="signup-text">Don't have an account? <a href="#">Sign-up now</a></p>
-    </div>
+    <SignupForm />
   )
-}
+};
 
-export default App
+export default App;
