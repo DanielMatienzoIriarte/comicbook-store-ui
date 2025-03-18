@@ -1,27 +1,22 @@
+import InputField from "./books/components/input_field"
+import SocialLogin from "./books/components/social_login"
+
 const App = () => {
   return (
-    <div classname="login-container">
-      <h2 classname="form-title"></h2>
-        <div className="social-login">
-          <button className="social-button">
-            google SSO
-          </button>
-        </div>
+    <div className="login-container">
+      <h2 className="form-title"></h2>
+        <SocialLogin />
 
-        <p class="separator"><span>or</span></p>
+        <p className ="separator"><span>or</span></p>
 
         <form action="#" className="login-form">
-          <div className="input-wrapper">
-            <input type="email" className="input-field" placeholder="email" required />
-            <i className="material-symbols-rounded">mail</i>
-          </div>
+          <InputField type="email" placeholder="Email address" icon="mail" />
 
-          <div className="input-wrapper">
-          <input type="password" className="password-field" required />
-            <i className="material-symbols-rounded">lock</i>
-          </div>
+          <InputField type="password" placeholder="Password" icon="lock" />
 
-          <button classnmae="login-button">Log In</button>
+          <a href="#" className="forgot-password-link">Forgot Password?</a>
+
+          <button className="login-button">Log In</button>
         </form>
 
         <p className="signup-text">Don't have an account? <a href="#">Sign-up now</a></p>
