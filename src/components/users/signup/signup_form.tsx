@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { userInterface } from "../../../utils/interfaces";
 import InputField from "./input_field";
 
@@ -10,6 +10,7 @@ const SignupForm = () =>
     register,
     control,
     handleSubmit,
+    formState: { errors }
   } = useForm<userInterface>({
     defaultValues: {
       fullName: "",
@@ -24,12 +25,6 @@ const SignupForm = () =>
 
   const [isPasswordDisplayed, setIsPasswordDisplayed] = useState(false);
 
-  const navigate = useNavigate();
-  
-  const loginRedirect = () => {
-    navigate('/login');
-  };
-
   return (
     <div className="signup-container">
       <h2 className="form-title">Sign Up</h2>
@@ -43,6 +38,7 @@ const SignupForm = () =>
             render={({ field }) => <input {...field} type="text" className="input-field" placeholder={"Full Name"} />}
           />
           <i className="material-symbols-rounded">person</i>
+          {errors.fullName && <p>{errors.fullName.type}</p>}
         </div>
 
         <div className="input-wrapper">
@@ -74,7 +70,7 @@ const SignupForm = () =>
         <input type="submit" className="signup-button" value="Sign Up" />
       </form>
 
-      <p className="login-text">Have an account already? <a href="#" onClick={loginRedirect}>Sign-in</a> now</p>
+      <p className="login-text">Have an account already? <Link to="/login">Sign-in</Link> now</p>
     </div>
   );
 };

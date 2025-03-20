@@ -9,18 +9,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signup" element={<SignupForm />} />
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="*" element={<HomePage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
   )
 };
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<LoginForm />);
 
 export default App;

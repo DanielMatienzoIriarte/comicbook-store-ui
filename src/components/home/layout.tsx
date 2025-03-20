@@ -1,10 +1,25 @@
 import React from 'react';
+import { Outlet, Link } from "react-router-dom";
+
 const Layout = () =>
 {
   return (
-    <div className="login-container">
-      <p>MENU</p>
-    </div>
+    <>
+      <nav>
+        <ul>
+          <li>
+            Home
+          </li>
+          <li>
+            search
+          </li>
+          <li>
+            my comic books
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
+    </>
   );
 };
   
