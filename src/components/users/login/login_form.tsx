@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import InputField from "./input_field";
 import SocialLogin from "./social_login";
 
 const LoginForm = () =>
 {
+  const navigate = useNavigate();
+
+  const signupRedirect = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className="login-container">
       <h2 className="form-title"></h2>
@@ -21,7 +28,7 @@ const LoginForm = () =>
           <button className="login-button">Log In</button>
         </form>
 
-        <p className="signup-text">Don't have an account? <a href="#">Sign-up now</a></p>
+        <p className="signup-text">Don't have an account? <a href="#" onClick={signupRedirect}>Sign-up</a> now</p>
     </div>
   );
 };

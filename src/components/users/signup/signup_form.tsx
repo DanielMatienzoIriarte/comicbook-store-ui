@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { userInterface } from "../../../utils/interfaces";
 import InputField from "./input_field";
 
 const SignupForm = () =>
@@ -22,6 +24,12 @@ const SignupForm = () =>
 
   const [isPasswordDisplayed, setIsPasswordDisplayed] = useState(false);
 
+  const navigate = useNavigate();
+  
+  const loginRedirect = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="signup-container">
       <h2 className="form-title">Sign Up</h2>
@@ -42,7 +50,7 @@ const SignupForm = () =>
             name="email"
             control={control}
             rules={{ required:true, maxLength:120 }}
-            render={({ field }) => <input {...field} type="email" className="input-field" placeholder={"email"} />}
+            render={({ field }) => <input {...field} type="email" className="input-field" placeholder={"Email address"} />}
           />
           <i className="material-symbols-rounded">email</i>
         </div>
@@ -66,7 +74,7 @@ const SignupForm = () =>
         <input type="submit" className="signup-button" value="Sign Up" />
       </form>
 
-      <p className="login-text">Have an account already? <a href="#">Sign-in</a> now</p>
+      <p className="login-text">Have an account already? <a href="#" onClick={loginRedirect}>Sign-in</a> now</p>
     </div>
   );
 };
