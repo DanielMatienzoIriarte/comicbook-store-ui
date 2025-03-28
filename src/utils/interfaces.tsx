@@ -1,9 +1,14 @@
 export interface userInterface {
     id: number,
-    fullName: string,
+    fullname: string,
     email: string,
     password: string,
 };
+
+export interface userLoginInterface {
+    email: string,
+    password: string,
+}
 
 export interface bookInterface {
     id: number,

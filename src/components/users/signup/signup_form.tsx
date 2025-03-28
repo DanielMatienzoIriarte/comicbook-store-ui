@@ -1,9 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { userInterface } from "../../../utils/interfaces";
-import { TextField } from "@mui/material";
-
+import { postUser } from "../../../utils/service_managr";
 
 const SignupForm = () =>
 {
@@ -14,14 +13,14 @@ const SignupForm = () =>
     formState: { errors }
   } = useForm<userInterface>({
     defaultValues: {
-      fullName: "",
+      fullname: "",
       email: "",
       password: "",
     }
   });
 
   const onSubmit: SubmitHandler<userInterface> = (data) => {
-    console.log('666', data);
+    postUser(data);
   };
 
   const [isPasswordDisplayed, setIsPasswordDisplayed] = useState(false);
@@ -33,7 +32,7 @@ const SignupForm = () =>
       <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="input-wrapper">
           <Controller
-            name="fullName"
+            name="fullname"
             control={control}
             rules={{
               required: {value: true, message: "Full name is required"},
@@ -51,7 +50,7 @@ const SignupForm = () =>
           />
           <i className="material-symbols-rounded">person</i>
 
-          {errors.fullName && <span className="form-error-message" style={{ color:'red' }}>{errors.fullName?.message}</span>}
+          {errors.fullname && <span className="form-error-message" style={{ color:'red' }}>{errors.fullname?.message}</span>}
         </div>
 
         <div className="input-wrapper">
@@ -67,7 +66,7 @@ const SignupForm = () =>
               minLength: {value: 9, message: "Email is too short"},
               maxLength: {value: 150, message: "Email name is too long"}
             }}
-            render={({ field }) => <input {...field} type="email" className="input-field" placeholder={"Email address"} />}
+            render={({ field }) => <input {...field} type="email" className="input-field" placeholder="Email address" />}
           />
           <i className="material-symbols-rounded">email</i>
 

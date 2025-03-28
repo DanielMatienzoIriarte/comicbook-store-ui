@@ -16,6 +16,9 @@ const Layout = () =>
           <li>
             my comic books
           </li>
+          <li>
+            logout
+          </li>
         </ul>
       </nav>
       <Outlet />
