@@ -14,8 +14,8 @@ export const login = (user:userLoginInterface) => {
   .catch(error => window.location.href='/login');
 };
 
-export const logout = (user:userLoginInterface) => {
-  axios.post('http://127.0.0.1:8000/api/user/logout', user)
+export const logout = () => {
+  axios.get('http://127.0.0.1:8000/api/user/logout')
   .then(response => window.location.href='/login')
-  .catch(error => {alert('Error when creating a new user')});
+  .catch(error => {alert('Error when loging out a user')});
 }

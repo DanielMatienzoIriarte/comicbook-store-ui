@@ -17,7 +17,7 @@ const Layout = () =>
             my comic books
           </li>
           <li>
-            logout
+            <Link to="/logout">logout</Link>
           </li>
         </ul>
       </nav>
