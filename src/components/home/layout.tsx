@@ -1,28 +1,15 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
+import TopMenu from './top_menu';
 
 const Layout = () =>
 {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            Home
-          </li>
-          <li>
-            search
-          </li>
-          <li>
-            my comic books
-          </li>
-          <li>
-            <Link to="/logout">logout</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="templatemo_container">
+      <TopMenu />
+      
       <Outlet />
-    </>
+    </div>
   );
 };
   
