@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../public/templatemo_style.css';
 import Header from './header';
 import LeftContent from './left_content';
 import MainContent from './main_content';

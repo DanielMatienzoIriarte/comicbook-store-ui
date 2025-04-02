@@ -7,6 +7,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -156,6 +160,15 @@ body {
   display: block;
   width: fit-content;
   margin-top: -0.44rem;
+}
+
+.login-form .signup-text {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 
 .login-form .login-button, .signup-form .signup-button {
