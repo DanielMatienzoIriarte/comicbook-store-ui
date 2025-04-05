@@ -7,10 +7,12 @@ const TopMenu = () =>
     <div className="templatemo_menu">
       <nav>
         <ul>
-          <li><a href="index.html" className="current">Home</a></li>
-          <li><a href="subpage.html">Search</a></li>
-          <li><a href="subpage.html">Books</a></li>            
-          <li><a href="subpage.html">New Releases</a></li> 
+          <li><Link to="/home" className="current">Home</Link></li>
+          <li><Link to="/search">Search</Link></li>
+          <li>
+            <Link to="/books">Books</Link>
+          </li>
+          <li><Link to="/home">XXX</Link></li>
           <li>
             <Link to="/logout">Logout</Link>
           </li>
