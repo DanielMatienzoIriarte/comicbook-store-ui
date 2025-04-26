@@ -1,31 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { bookInterface } from '../../utils/interfaces';
-import { getLatestComicBooks } from '../../utils/service_managr';
 import BookPreview from '../home/book_preview';
 
-const RenderBooks = (props: { books_limit: Number; }) =>
+const RenderBooks = (props: { books: bookInterface[] }) =>
 {
-  const [books, setBooks] = useState<bookInterface[]|null>(null);
-
-  useEffect(() => {
-    const fetchLatestBooks = async () => {
-      try {
-        const response = await getLatestComicBooks(props.books_limit);
-        console.log(response);
-        response && setBooks(response.books);
-      } catch (error) {
-        console.log('666', error);
-      }
-    };
-
-    fetchLatestBooks();
-  },[]);
-
   return (
     <div className="templatemo_content_right">
       {
-        books && (
-          books.map((book, index) => {
+        props.books != null && (
+          props.books.map((book, index) => {
             if (index % 2 === 0) {
               return (
                 <>

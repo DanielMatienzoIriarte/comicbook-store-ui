@@ -1,23 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { getCategories } from '../../utils/service_managr';
+import { setDefaultAutoSelectFamilyAttemptTimeout } from 'net';
+import { category } from '../../utils/interfaces';
+import LeftContentCategories from './left_content_categories';
 
 const LeftContent = () =>
 {
+
   return (
     <div className="templatemo_content_left">
-      <div className="templatemo_content_left_section">
-        <h1>Categories</h1>
-        <ul>
-          <li><a href="subpage.html">Donec accumsan urna</a></li>
-          <li><a href="subpage.html">Proin vulputate justo</a></li>
-          <li><a href="#">In sed risus ac feli</a></li>
-          <li><a href="#">Aliquam tristique dolor</a></li>
-          <li><a href="#">Maece nas metus</a></li>
-          <li><a href="#">Sed pellentesque placerat</a></li>
-          <li><a href="#">Suspen disse</a></li>
-          <li><a href="#">Maece nas metus</a></li>
-          <li><a href="#">In sed risus ac feli</a></li>
-        </ul>
-      </div>
+      <LeftContentCategories />
 
       <div className="templatemo_content_left_section">
         <h1>Bestsellers</h1>

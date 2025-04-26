@@ -21,11 +21,30 @@ export const logout = () => {
 };
 
 export const getLatestComicBooks = (limit: Number) => {
-  return axios.get('http://127.0.0.1:8000/book/all/'+limit)
+  return axios.get('http://127.0.0.1:8000/api/books/all')
   .then(response => response.data.data)
   .catch(error => console.log('error', error));
 };
 
+export const getComicBooks = async (page: Number, per_page: Number) => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/books?page=' + page + '&per_page=' + per_page);
+    return response.data.data.books;
+  } catch (error) {
+    return console.log('error', error);
+  }
+};
+
+export const getCategories = async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/books/categories');
+
+    console.log('response', response);
+    return response.data.data.categories;
+  } catch (error) {
+    return console.log('error', error);
+  }
+ };
 
 
 /* export const getLatestComicBooks = async (limit: Number) => {
