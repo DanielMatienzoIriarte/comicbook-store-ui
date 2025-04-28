@@ -7,12 +7,14 @@ import Layout from "./components/home/layout";
 import { Logout } from "./components/users/login/user_logout";
 import RenderAllBooks from "./components/books/render_all_books";
 import { Outlet, Link } from "react-router-dom";
+import Header from './components/home/header';
 import TopMenu from './components/home/top_menu';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="templatemo_container">
+        <Header />
         <TopMenu />
 
         <Routes>
