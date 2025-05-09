@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { bookInterface } from "../../utils/interfaces";
 
 const BookPreview = (book:bookInterface) => {
+  const path = `book/${book.id}`;
   
   return (
     <div className="templatemo_product_box">
@@ -9,9 +11,8 @@ const BookPreview = (book:bookInterface) => {
       <img src="images/templatemo_image_01.jpg" alt="image" />
       <div className="product_info">
         <p>{book.description}</p>
-        <h3>$55</h3>
         <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-        <div className="detail_button"><a href="subpage.html">Detail</a></div>
+        <div className="detail_button"><Link to={`${path}`}>Details</Link></div>
       </div>
       <div className="cleaner">&nbsp;</div>
     </div>

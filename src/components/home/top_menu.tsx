@@ -15,15 +15,12 @@ const TopMenu = () =>
             <li>
               <Link to="/books">Books</Link>
             </li>
-            <li><Link to="/home">XXX</Link></li>
             <li>
               <Link to="/logout">Logout</Link>
             </li>
           </ul>
         </nav>
       </div>
-
-      <LeftContent />
     </>
   );
 }

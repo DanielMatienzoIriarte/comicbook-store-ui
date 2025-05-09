@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getCategories } from '../../utils/service_managr';
-import { category } from '../../utils/interfaces';
+import { categoryInterface } from '../../utils/interfaces';
 import { Link } from 'react-router-dom';
 
 const LeftContentCategories = () =>
 {
-  const [categories, setCategories] = useState<category[]|null>(null);
+  const [categories, setCategories] = useState<categoryInterface[]|null>(null);
 
   useEffect(() => {
     const fetchCategories = async() => {
@@ -22,7 +22,7 @@ const LeftContentCategories = () =>
       <ul>
         {
           categories?.map((category) => {
-            const path = `http://127.0.0.1:8000/api/books/by-category/${category.id}`;
+            const path = `by-category/${category.id}`;
 
             return (
               <li><Link to={`${path}`}>{category.name}</Link></li>

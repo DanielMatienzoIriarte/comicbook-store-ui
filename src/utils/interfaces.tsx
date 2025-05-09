@@ -16,6 +16,15 @@ export interface bookInterface {
     description: string,
 }
 
+export interface bookDetailsInterface {
+    id: number,
+    name: string,
+    description: string,
+    format: string,
+    category: string,
+    price: number
+}
+
 export interface paginateLinks {
     active: boolean,
     label: string,
@@ -38,8 +47,12 @@ export interface booksResponse {
     total: Number,
 }
 
-export interface category {
+export interface categoryInterface {
     id: Number,
     name: string,
     description: string,
+}
+
+export interface bookForSearchInterface {
+    searchCriteria: string,
 }

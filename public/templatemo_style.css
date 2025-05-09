@@ -6,6 +6,8 @@ CSS Credit: http://www.templatemo.com/
 Book Store Template 
 http://www.templatemo.com/preview/templatemo_086_book_store 
 */
+@import url('bootstrap/dist/css/bootstrap.min.css');
+
 body {
 	margin: 0;
 	padding: 0;
@@ -94,7 +96,7 @@ img {
 
 .templatemo_menu {
 	clear: both;
-	width: 960px;
+	/* width: 960px; */
 	height: 45px;
 	background: url(images/templatemo_menu_bg.jpg) no-repeat;
 }
@@ -128,7 +130,7 @@ img {
 /* header */
 .templatemo_header {
 	clear: both;
-	width: 960px;
+	/* width: 960px; */
 	height: 260px;
 	padding: 0;
 	margin: 0;
@@ -182,7 +184,7 @@ img {
 /* content */
 .templatemo_content {
 	clear: both;
-	width: 920px;
+	/* width: 920px; */
 	padding: 0 20px;
 }
 
@@ -309,7 +311,7 @@ img {
 /* footer */
 .templatemo_footer {
 	clear: both;
-	width: 960px;
+	/* width: 960px; */
 	padding: 20px 0px 20px 0;
 	text-align: center;
 	border-top: 1px solid #25211e;

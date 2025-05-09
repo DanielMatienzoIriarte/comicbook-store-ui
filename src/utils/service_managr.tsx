@@ -46,6 +46,34 @@ export const getCategories = async () => {
   }
  };
 
+ export const searchComicBooks = async (searchCriteria: string) => {
+  try {
+     const response = await axios.get('http://127.0.0.1:8000/api/books/search/' + searchCriteria);
+     return response.data.data;
+   } catch (error) {
+     return console.log('error', error);
+   }
+ };
+
+ export const getComicBooksByCategory = async (category_id: string) => {
+  try {
+    const response = await axios.get(`http://127.0.0.1:8000/api/books/by-category/${category_id}`);
+    return response.data.data;
+  } catch (error) {
+    return console.log('error', error);
+  }
+ };
+
+ export const getComicBook = async (book_id: string) => {
+  try {
+    const response = await axios.get(`http://127.0.0.1:8000/api/books/${book_id}`);
+    console.log('response', response.data.data);
+    return response.data.data;
+  } catch (error) {
+    return console.log('error', error);
+  }
+ };
+
 
 /* export const getLatestComicBooks = async (limit: Number) => {
   try {

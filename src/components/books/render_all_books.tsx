@@ -28,12 +28,9 @@ const RenderAllBooks = () =>
     books && 
     <>
       <div className="templatemo_content">
-        <LeftContent />
         <RenderBooks books={books} />
         <div className="cleaner_with_height">&nbsp;</div>
       </div>
-
-      <Footer />
     </>
   )
 }
