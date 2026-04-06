@@ -10,11 +10,13 @@ const InputField = ({ type, placeholder, icon }) => {
         className="input-field"
         placeholder={placeholder}
         required
+        data-testid="input-field"
       />
       <i className="material-symbols-rounded">{icon}</i>
       {
         type === 'password' && (
           <i 
+            data-testid="eye-icon"
             onClick={ () => setIsPasswordDisplayed(prevState => !prevState) }
             className="material-symbols-rounded eye-icon"
           >

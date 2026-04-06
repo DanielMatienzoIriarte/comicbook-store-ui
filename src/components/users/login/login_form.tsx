@@ -37,7 +37,7 @@ const LoginForm = () =>
 
         <p className ="separator"><span>or</span></p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+        <form onSubmit={handleSubmit(onSubmit)} className="login-form" data-testid="login-form">
           <div className="input-wrapper">
             <Controller
               name="email"
@@ -85,7 +85,7 @@ const LoginForm = () =>
           <button className="login-button">Log In</button>
         </form>
 
-        <p className="signup-text">Don't have an account? <Link to="/signup">Sign-up</Link> now</p>
+        <p className="signup-text" data-testid="signup-text">Don't have an account? <Link to="/signup">Sign-up</Link> now</p>
     </div>
   );
 };
