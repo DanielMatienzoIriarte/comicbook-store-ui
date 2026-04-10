@@ -30,7 +30,7 @@ body {
   max-width: 410px;
   padding: 2rem 1.5rem;
   border-radius: 0.5rem;
-  background: #fff;
+  background: #444444;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -50,13 +50,11 @@ body {
   margin: 1.5rem 0;
   text-align: center;
   position: relative;
-  background: #fff;
 }
 
 .login-container .separator span {
   margin: 1.5rem 0;
   z-index: 1;
-  background: #fff;
   padding: 0 0.9rem;
   font-size: 1.06rem;
   font-weight: 500;
@@ -99,21 +97,25 @@ body {
   width: 23px;
 }
 
+.login-form {
+  margin-top:50px;
+}
+
 .login-form .input-wrapper, .signup-form .input-wrapper {
   height: 54px;
   width: 100%;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.0rem;
 }
 
 .login-form .input-field, .signup-form .input-field {
-  width: 100%;
+  width: 75%;
   height: 100%;
   outline: none;
   font-size: 1.06rem;
   border-radius: 0.31rem;
   border: 1px solid #bfb3f2;
-  padding: 0px 1.25rem 0 3.12rem;
+  padding: 0px 3rem;
   transition: 0.2s ease;
 }
 
@@ -148,7 +150,7 @@ body {
 .login-form .input-wrapper i.eye-icon, .signup-form .input-wrapper i.eye-icon {
   color: #917de8;
   display: none;
-  right: 0.93rem;
+  right: 1.0rem;
   cursor: pointer;
   font-size: 1.25rem;
 }
@@ -157,13 +159,20 @@ body {
   display: flex;
 }
 
+.login-form .input-wrapper span.form-error-message {
+  margin-top:0.3em;
+  font-weight: bold;
+  color: #e00;
+  font-size: '12px';
+}
+
 .login-form .forgot-password-link {
   display: block;
   width: fit-content;
   margin-top: -0.44rem;
 }
 
-.login-form .signup-text {
+.login-form .signup-text, .login-form .forgot-password-text {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -181,7 +190,7 @@ body {
   font-size: 1.125rem;
   font-weight: 500;
   cursor: pointer;
-  margin-top: 2.19rem;
+  margin-top: 0.5rem;
   border-radius: 0.31rem;
   background: #5f41e4;
   transition: 0.3s ease;

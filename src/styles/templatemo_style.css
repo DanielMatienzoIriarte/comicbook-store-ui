@@ -184,7 +184,7 @@ img {
 /* content */
 .templatemo_content {
 	clear: both;
-	/* width: 920px; */
+	margin:50px 0;
 	padding: 0 20px;
 }
 

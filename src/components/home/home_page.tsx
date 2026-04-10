@@ -1,5 +1,4 @@
-import React from 'react';
-import '../../../public/templatemo_style.css';
+import '../../styles/templatemo_style.css';
 import MainContent from './main_content';
 
 const HomePage = () =>

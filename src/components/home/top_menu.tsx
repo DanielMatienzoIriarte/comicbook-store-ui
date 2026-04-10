@@ -16,7 +16,7 @@ const TopMenu = () =>
               <Link to="/books">Books</Link>
             </li>
             <li>
-              <Link to="/logout">Logout</Link>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </nav>

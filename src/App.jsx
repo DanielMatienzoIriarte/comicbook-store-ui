@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import { Outlet } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import LoginForm from "./components/users/login/login_form";
 import SignupForm from "./components/users/signup/signup_form";
 import HomePage from "./components/home/home_page";
 import { Logout } from "./components/users/login/user_logout";
@@ -15,6 +14,7 @@ import LeftContent from "./components/home/left_content";
 import Footer from './components/home/footer';
 import ComicBooksByCategory from './components/home/books_by_category';
 import BookDetail from './components/home/book_details';
+import LoginPage from "./components/users/login/login_page";
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
                 <Route index element={<HomePage />} />
                 <Route path="*" element={<HomePage />} />
               </Route>
-              <Route path="/login" element={<LoginForm />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupForm />} />
               <Route path="/logout" element={<Logout />} />
               <Route path="/books" element={<RenderAllBooks />} />

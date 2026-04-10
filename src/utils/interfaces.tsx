@@ -1,3 +1,15 @@
+import React from "react";
+
+export interface LoginFormProps {
+  submitHandler: (data: userLoginInterface) => void | Promise<void>;
+}
+
+export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  icon?: string;
+  error?: string;
+}
+
 export interface userInterface {
     id: number,
     fullname: string,

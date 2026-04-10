@@ -8,5 +8,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom', // Provides a browser-like environment
     setupFiles: './setupTests.js', // or './src/test/setup.ts'
+    css: true,
   },
 })
