@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { bookInterface } from "../../utils/interfaces";
+import { bookInterface } from "../../interfaces/interfaces";
 
 const BookPreview = (book:bookInterface) => {
   const path = `book/${book.id}`;

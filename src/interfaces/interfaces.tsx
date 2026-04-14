@@ -37,6 +37,11 @@ export interface bookDetailsInterface {
     price: number
 }
 
+export interface getLatestBooksInterface {
+    status: string,
+    books: bookInterface[],
+}
+
 export interface paginateLinks {
     active: boolean,
     label: string,
@@ -63,6 +68,11 @@ export interface categoryInterface {
     id: Number,
     name: string,
     description: string,
+}
+
+export interface getCategoriesResultInterface {
+    status: string,
+    categories: categoryInterface[],
 }
 
 export interface bookForSearchInterface {

@@ -1,12 +1,12 @@
 import { login } from "../../../utils/service_managr";
 import { LoginForm } from "./login_form";
-import { userLoginInterface } from "../../../utils/interfaces";
+import { userLoginInterface } from "../../../interfaces/interfaces";
 
 export default function LoginPage()
 {
   const handleLogin = async (data: userLoginInterface) => {
     try {
-      const response = await login(data);
+      const response = login(data);
       //redirect
     } catch (error) { //TODO handle errors
       console.log("Loginj Failed", error);

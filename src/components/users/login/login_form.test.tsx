@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import { describe, test, expect, vi, beforeEach } from "vitest";
 import {LoginForm} from  './login_form';
-import { LoginFormProps } from '../../../utils/interfaces';
+import { LoginFormProps } from '../../../interfaces/interfaces';
 
 const mockSubmitHandler = vi.fn<LoginFormProps['submitHandler']>();
 

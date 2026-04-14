@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { bookInterface } from '../../utils/interfaces';
-import BookPreview from '../home/book_preview';
+import { Fragment } from 'react';
+import { bookInterface } from '../../interfaces/interfaces';
+import BookPreview from './book_preview';
 
 const RenderBooks = (props: { books: bookInterface[] }) =>
 {
@@ -9,27 +9,25 @@ const RenderBooks = (props: { books: bookInterface[] }) =>
       {
         props.books != null && (
           props.books.map((book, index) => {
-            if (index % 2 === 0) {
-              return (
-                <>
-                  <BookPreview key={book.id} id={book.id} name={book.name} description={book.description} />
-                  <div className="cleaner_with_width">&nbsp;</div>
-                </>
-              )
-            } else {
-              return (
-                <>
-                  <BookPreview key={book.id} id={book.id} name={book.name} description={book.description} />
-                  <div className="cleaner_with_height">&nbsp;</div>
-                </>
-              )
-            }
+            const isEven = index % 2 === 0;
+
+            return (
+              <Fragment key={book.id}>
+                <BookPreview
+                  key={book.id}
+                  id={book.id}
+                  name={book.name}
+                  description={book.description}
+                />
+                <div className={isEven ? "cleaner_with_width" : "cleaner_with_height"}>
+                  &nbsp;
+                </div>
+              </Fragment>
+            )
           })
         )
       }
-
-      {/* <a href="subpage.html"><img src="images/templatemo_ads.jpg" alt="ads" /></a> */}
-      </div>
+    </div>
   );
 }
 

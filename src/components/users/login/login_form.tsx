@@ -7,11 +7,6 @@ import { LoginFormProps, userLoginInterface } from "../../../utils/interfaces";
 
 export function LoginForm ({ submitHandler }: LoginFormProps)
 {
-  /* const navigate = useNavigate();
-
-  const signupRedirect = () => {
-    navigate('/signup');
-  }; */
   const {
     control,
     handleSubmit,

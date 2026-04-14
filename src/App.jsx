@@ -13,7 +13,7 @@ import TopMenu from './components/home/top_menu';
 import LeftContent from "./components/home/left_content";
 import Footer from './components/home/footer';
 import ComicBooksByCategory from './components/home/books_by_category';
-import BookDetail from './components/home/book_details';
+import BookDetail from './components/books/book_details';
 import LoginPage from "./components/users/login/login_page";
 
 const App = () => {
