@@ -1,0 +1,258 @@
+@import url('bootstrap/dist/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #333;
+}
+
+#root {
+  width: 100%;
+  padding: 0.6rem;
+}
+
+.login-container, .signup-container {
+  margin: 0 auto;
+  max-width: 410px;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #444444;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-container .form-title, .signup-container .form-title {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
+
+.login-container .social-login {
+  display: flex;
+  gap: 1.31rem;
+}
+
+.login-container .separator {
+  margin: 1.5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.login-container .separator span {
+  margin: 1.5rem 0;
+  z-index: 1;
+  padding: 0 0.9rem;
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: #6652be;
+  position:relative;
+}
+
+.login-container .separator:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #bfb3f2;
+  content: "";
+}
+
+.social-login .social-button {
+  display: flex;
+  gap: 0.81rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.75rem 0;
+  border-radius: 0.31rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5cbff;
+  background: #f9f8ff;
+  transition: 0.3s ease;
+}
+
+.social-login .social-button:hover {
+  background: #5f41e4;
+  border-color: #f1eff9;
+}
+
+.social-login .social-button .social-icon {
+  width: 23px;
+}
+
+.login-form {
+  margin-top:50px;
+}
+
+.login-form .input-wrapper, .signup-form .input-wrapper {
+  height: 54px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 2.0rem;
+}
+
+.login-form .input-field, .signup-form .input-field {
+  width: 75%;
+  height: 100%;
+  outline: none;
+  font-size: 1.06rem;
+  border-radius: 0.31rem;
+  border: 1px solid #bfb3f2;
+  padding: 0px 3rem;
+  transition: 0.2s ease;
+}
+
+.login-form .input-field:focus, .signup-form .input-field:focus {
+  border-color: #5f41e4;
+}
+
+.login-form .input-field::placeholder, .signup-form .input-field::placeholder {
+  color: #a395e0;
+}
+
+.login-form .input-wrapper i, .signup-form .input-wrapper i {
+  color: #a395e0;
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  display:flex;
+  align-items: center;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+
+.login-form .input-wrapper i:not(.eye-icon), .signup-form .input-wrapper i:not(.eye-icon) {
+  pointer-events: none ;
+  left: 0.93rem;
+}
+
+.login-form .input-field:focus ~ i:not(.eye-icon), .signup-form .input-wrapper ~ i:not(.eye-icon) {
+  color: #5f41e4;
+}
+
+.login-form .input-wrapper i.eye-icon, .signup-form .input-wrapper i.eye-icon {
+  color: #917de8;
+  display: none;
+  right: 1.0rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.login-form .input-wrapper .input-field:valid ~ .eye-icon, .signup-form .input-wrapper .input-field:valid ~ .eye-icon {
+  display: flex;
+}
+
+.login-form .input-wrapper span.form-error-message {
+  margin-top:0.3em;
+  font-weight: bold;
+  color: #e00;
+  font-size: '12px';
+}
+
+.login-form .forgot-password-link {
+  display: block;
+  width: fit-content;
+  margin-top: -0.44rem;
+}
+
+.login-form .signup-text, .login-form .forgot-password-text {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+.login-form .login-button, .signup-form .signup-button {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 54px;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border-radius: 0.31rem;
+  background: #5f41e4;
+  transition: 0.3s ease;
+}
+
+.login-form .login-button:hover, .signup-form .signup-button:hover {
+  background: #4320df;
+}
+
+.login-container .signup-prompt, .signup-container .signup-prompt {
+  text-align: center;
+  font-size: 1.06rem;
+  font-weight: 500;
+  margin: 1.75rem 0 0.31rem;
+}
+
+.login-container a, .signup-container a {
+  color: #5f41e4;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-container a:hover, .signup-container a:hover {
+  text-decoration: underline;
+}
+
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Start high so user sees search immediately */
+  padding-top: 350px;
+  z-index: 9999;
+}
+
+.modal_content {
+  background: #222; /* Matching your templatemo theme */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #444;
+}
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.close_btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
