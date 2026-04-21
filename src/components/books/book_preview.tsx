@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { bookInterface } from "../../interfaces/interfaces";
 
-const BookPreview = (book:bookInterface) => {
+const BookPreview = (book: bookInterface & { onDetailClick?: () => void }) => {
   const path = `book/${book.id}`;
   
   return (
@@ -11,9 +11,16 @@ const BookPreview = (book:bookInterface) => {
       <img src="images/templatemo_image_01.jpg" alt="image" />
       <div className="product_info">
         <p>{book.description}</p>
-        <div className="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-        <div className="detail_button"><Link to={`${path}`}>Details</Link></div>
+
+        <div className="buy_now_button">
+          <a href="subpage.html">Buy Now</a>
+        </div>
+
+        <div className="detail_button">
+          <Link to={path} onClick={book.onDetailClick}>Details</Link>
+        </div>
       </div>
+
       <div className="cleaner">&nbsp;</div>
     </div>
   );

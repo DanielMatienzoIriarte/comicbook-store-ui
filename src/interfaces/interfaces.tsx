@@ -26,14 +26,19 @@ export interface bookInterface {
     id: number,
     name: string,
     description: string,
+    author: string,
+    price: number,
+    slug?: string;
 }
 
 export interface bookDetailsInterface {
     id: number,
     name: string,
     description: string,
+    author: string,
     format: string,
     category: string,
+    quantity: number,
     price: number
 }
 
@@ -48,26 +53,33 @@ export interface paginateLinks {
     url: string|null,
 }
 
-export interface booksResponse {
-    current_page: Number,
+export interface paginateLinks {
+  url: string | null;
+  label: string;
+  active: boolean;
+}
+
+export interface BookResponseInterface {
+    current_page: number,
     data: bookInterface[],
     first_page_url: string,
-    from:Number,
-    last_page: Number,
+    from:number,
+    last_page: number,
     last_page_url: string,
     links: paginateLinks[],
     next_page_url: string|null,
     path: string, 
-    per_page: Number,
+    per_page: number,
     prev_page_url: string|null
-    to: Number,
-    total: Number,
+    to: number,
+    total: number,
 }
 
 export interface categoryInterface {
-    id: Number,
+    id: number,
     name: string,
     description: string,
+    slug?: string;
 }
 
 export interface getCategoriesResultInterface {
@@ -77,4 +89,11 @@ export interface getCategoriesResultInterface {
 
 export interface bookForSearchInterface {
     searchCriteria: string,
+}
+
+export interface SearchState {
+  query: string;
+  results: bookInterface[];
+  isSearching: boolean;
+  error: string | null;
 }

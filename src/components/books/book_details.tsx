@@ -51,13 +51,21 @@ const BookDetail = () => {
         <img src="/images/templatemo_image_01.jpg" alt={book.name} />
       </div>
 
+      <div className="book_meta">
+        <h3>Author</h3>
+        <p>{book.author}</p>
+      </div>
+
       <div className="product_info_full">
         <h3>Description</h3>
         <p>{book.description}</p>
         
         <div className="book_meta">
-          {/* Example of adding more details if your interface supports it */}
           <p><strong>Category:</strong> category666</p>
+        </div>
+        
+        <div className="book_meta">
+          <p><strong>Price:</strong> {book.price}</p>
         </div>
 
         <div className="action_buttons">

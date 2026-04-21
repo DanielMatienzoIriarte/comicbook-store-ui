@@ -125,6 +125,10 @@ img {
 	color: #fcf88e;
 }
 
+.templatemo_menu li.last_menu_item {
+	float:right;
+}
+
 /* end of menu*/
 
 /* header */
