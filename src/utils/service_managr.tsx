@@ -7,11 +7,6 @@ export const postUser = (user:userInterface) => {
   .catch(error => {alert('Error when creating a new user')});
 };
 
-export const login = (user:userLoginInterface) => {
-  axios.post('http://127.0.0.1:8000/api/user/login', user)
-  .then(response => window.location.href='/home')
-  .catch(error => window.location.href='/login');
-};
 
 export const logout = () => {
   axios.get('http://127.0.0.1:8000/api/user/logout')

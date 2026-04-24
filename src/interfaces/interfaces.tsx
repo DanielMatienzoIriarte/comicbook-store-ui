@@ -1,7 +1,9 @@
 import React from "react";
+import { SubmitHandler } from "react-hook-form";
 
 export interface LoginFormProps {
   submitHandler: (data: userLoginInterface) => void | Promise<void>;
+  isLoading?: boolean;
 }
 
 export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -20,6 +22,43 @@ export interface userInterface {
 export interface userLoginInterface {
     email: string,
     password: string,
+}
+
+export interface AuthProviderProps {
+  provider: 'google' | 'github';
+  icon: string;
+  label: string;
+}
+
+export interface AuthContextType {
+  user: userInterface | null;
+  login: (user: userInterface) => void;
+  logout: () => void;
+  isAuthenticated: boolean;
+  checkingAuth: boolean;
+}
+
+export interface userRegisterInterface {
+  username: string;
+  email: string;
+  password: string;
+  password_confirmation: string; // Used for client-side matching
+  // Optional: Add terms if you plan to have a checkbox
+  accept_terms?: boolean; 
+}
+
+export interface RegisterFormProps {
+  /**
+   * The function that handles the validated form data.
+   * Usually passed from the useAuthActions hook.
+   */
+  submitHandler: SubmitHandler<userRegisterInterface>;
+
+  /**
+   * Optional: Toggles the loading state of the submit button
+   * to prevent multiple submissions.
+   */
+  isLoading?: boolean;
 }
 
 export interface bookInterface {
