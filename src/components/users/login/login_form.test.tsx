@@ -22,10 +22,6 @@ describe('LoginForm rendering', () => {
     renderComponent();
   });
 
-  test('Form should render social login', () => {
-    expect(screen.getByTestId('social-login')).toBeInTheDocument();
-  });
-
   test('Form should render login form', () => {
     expect(screen.getByTestId('login-form')).toBeInTheDocument();
   });
@@ -74,7 +70,8 @@ describe('LoginForm functionallity', () => {
   });
 
   test("shows validation errors when fields are empty and submitted", async () => {
-    userEvent.click(screen.getByRole("button", { name: /Log In/i }));
+    const loginForm = screen.getByRole('form');
+    fireEvent.submit(loginForm);
 
     const emailErrorMessage = await screen.findByText(/Email is required/i);
     const passwordErrorMessage = await screen.findByText(/Password is required/i);
@@ -87,7 +84,8 @@ describe('LoginForm functionallity', () => {
     const emailInput = screen.getByPlaceholderText(/Enter your email/i);
     
     userEvent.type(emailInput, "bad.email@fake");
-    userEvent.click(screen.getByRole("button", { name: /Log In/i }));
+    const loginForm = screen.getByRole('form');
+    fireEvent.submit(loginForm);
 
     const errorMessage = await screen.findByText(/invalid email address/i);
 
@@ -97,10 +95,10 @@ describe('LoginForm functionallity', () => {
 
   test("shows validation errors and does not call submitHandler on invalid input", async () => {
     const emailInput = screen.getByPlaceholderText(/Enter your email/i);
-    const submitButton = screen.getByRole("button", { name: /Log In/i });
+    const loginForm = screen.getByRole('form');
 
     fireEvent.change(emailInput, { target: { value: "invalid-email@fake" } });
-    fireEvent.click(submitButton);
+    fireEvent.submit(loginForm);
 
     const error = await screen.findByText(/Invalid email address/i);
 
@@ -111,11 +109,12 @@ describe('LoginForm functionallity', () => {
   test("calls submitHandler with correct data when form is valid", async () => {
     const emailInput = screen.getByPlaceholderText(/Enter your email/i);
     const passwordInput = screen.getByPlaceholderText(/Password/i);
-    const submitButton = screen.getByRole("button", { name: /Log In/i });
+    const loginForm = screen.getByRole('form');
 
     fireEvent.change(emailInput, { target: { value: "test@aaa.com" } });
     fireEvent.change(passwordInput, { target: { value: "password123" } });
-    fireEvent.click(submitButton);
+
+    fireEvent.submit(loginForm);
 
     await waitFor(() => {
       expect(mockSubmitHandler).toHaveBeenCalledTimes(1);

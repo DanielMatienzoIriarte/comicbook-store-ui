@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import SocialLogin from "./social_login";
 import InputField from "../../common/input_field";
-import { LoginFormProps, userLoginInterface } from "../../../utils/interfaces";
+import { LoginFormProps, userLoginInterface } from "../../../interfaces/interfaces";
 
-export function LoginForm ({ submitHandler }: LoginFormProps)
+export function LoginForm ({ submitHandler, isLoading }: LoginFormProps)
 {
   const {
     control,
@@ -24,11 +23,8 @@ export function LoginForm ({ submitHandler }: LoginFormProps)
 
   return (
     <div className="login-container">
-        <SocialLogin />
 
-        <p className ="separator"></p>
-
-        <form onSubmit={handleSubmit(onFormSubmit)} className="login-form" data-testid="login-form">
+        <form onSubmit={handleSubmit(onFormSubmit)} className="login-form" data-testid="login-form" aria-label="form">
           <div className="input-wrapper">
             <Controller
               name="email"
@@ -75,7 +71,14 @@ export function LoginForm ({ submitHandler }: LoginFormProps)
             />
           </div>
 
-          <button className="login-button" data-testid="login-button" type="submit">Log In</button>
+          <button
+            className="login-button"
+            data-testid="login-button"
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading ? "Logging in..." : "Log In"}
+          </button>
         </form>
 
         <p className="signup-text" data-testid="signup-text">Don't have an account? <Link to="/signup">Sign-up</Link> now</p>
